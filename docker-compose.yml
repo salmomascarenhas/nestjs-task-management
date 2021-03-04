@@ -1,0 +1,15 @@
+version: '3'
+volumes:
+  db:
+services:
+  db:
+    container_name: manager_task
+    image: postgres:13
+    restart: always
+    ports: 
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: db
+    volumes:
+      - db:/var/lib/postgresql/data
+      
